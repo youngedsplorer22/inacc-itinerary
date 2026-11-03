@@ -4,9 +4,10 @@ A small React app that shows the itinerary for the INACC event (about 450 partic
 Each participant has an ID from `001` to `450`. The ID is printed on their card as a QR code that
 opens a link such as `https://<your-deployed-app>/001`.
 
-**Status:** temporary version. The page shows placeholder text ("Testing") and placeholder dates.
-The real itinerary, the final design, and the attendance feature (handled separately by the lead)
-are not part of this version.
+**Status:** itinerary for one group of participants (mobile-only design). Content comes from the first tab of the official
+Google Sheet and lives only in `src/data/itinerary.js`. See `VERIFICATION.md` for the sheet comparison. Attendance is not part of this version.
+Days 4-5 show a single schedule because the sheet has no Group 1 / Group 2 split; the participant-to-group
+integration point is `src/participant/group.js` (currently returns `null`).
 
 ## Technology
 
@@ -154,3 +155,4 @@ git push -u origin main
 - The selected day is not remembered: refreshing goes back to Day 1.
 - Group 1 / Group 2 itineraries (Days 4 and 5) are not implemented. How an ID maps to a group is not decided.
 - A missing file such as `/missing.js` returns the app page instead of a 404 on most static hosts. This is normal for single-page apps.
+

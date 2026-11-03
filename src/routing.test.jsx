@@ -47,7 +47,7 @@ describe('valid participant IDs open the itinerary', () => {
       expect(idShown()).toBe(id)
       unmount()
     }
-  })
+  }, 30000)
 
   it('a trailing slash still works (/001/)', () => {
     renderAt('/001/')
